@@ -8,6 +8,7 @@ module.exports = {
     '@vue/standard'
   ],
   rules: {
+    'no-empty-function': 'error', // 不允许空函数
     'no-use-before-define': 'error', // 在定义变量之前不允许使用变量
     'no-unused-vars': 'error', // 禁止未使用的变量
     'no-multiple-empty-lines': 'error', // 不允许多个空行
