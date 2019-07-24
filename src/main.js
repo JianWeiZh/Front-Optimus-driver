@@ -6,16 +6,8 @@ import store from './store'
 import 'amfe-flexible'
 import Navigation from 'vue-navigation'
 
-
-
-
-
 Vue.config.productionTip = false
 Vue.use(Navigation, { router })
-
-
-
-
 
 new Vue({
   router,
