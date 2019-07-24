@@ -11,6 +11,12 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
+  created () {
+    this.$createToast({
+      type: 'loading',
+      txt: '努力加载中...'
+    }).show()
+  },
   components: {
     HelloWorld
   }
