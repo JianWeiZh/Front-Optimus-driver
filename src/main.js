@@ -5,7 +5,9 @@ import router from './router'
 import store from './store'
 import 'amfe-flexible'
 import Navigation from 'vue-navigation'
+import MapFn from '@/utils/map'
 
+Vue.prototype.$VMap = MapFn
 Vue.config.productionTip = false
 Vue.use(Navigation, { router })
 

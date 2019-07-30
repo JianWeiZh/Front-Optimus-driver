@@ -22,6 +22,8 @@ module.exports = {
         })
     }
     config.externals({
+      'AMap': 'AMap',
+      'AMapUI': 'AMapUI',
       'vue': 'Vue',
       'vuex': 'Vuex',
       'vue-router': 'VueRouter'
@@ -43,5 +45,8 @@ module.exports = {
       postCompile: true,
       theme: true
     }
+  },
+  devServer: {
+    https: true
   }
 }
