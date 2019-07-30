@@ -20,7 +20,6 @@ export default {
     }
   },
   created () {
-    console.log(this.$VMap)
     this.getPosition()
   },
   mounted () {
@@ -54,7 +53,7 @@ export default {
       )
     },
     getPosition () {
-      this.$VMap.getPosition(this.positionSuc, this.positionErr)
+      this.$VMap.getPosition({}, this.positionSuc, this.positionErr)
     },
     positionSuc (res) {
       const position = res.position
