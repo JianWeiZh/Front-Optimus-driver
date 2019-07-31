@@ -11,6 +11,11 @@ export default {
     const map = new AMap.Map(options.loadMapDom, mapOptions)
     return map
   },
+  addPlugin: (pluginList) => {
+    AMap.service(pluginList, () => {
+      console.log('加载服务插件完成！')
+    })
+  },
   getPosition: (optionsData = {}, onComplete, onError) => { // 地图定位
     AMap.plugin('AMap.Geolocation', () => {
       if (AMap.UA.ios) {
@@ -66,7 +71,10 @@ export default {
     const size = new AMap.Size(x, y)
     return size
   },
-  positionPicker: (options) => {
+  setMarkerPosition: (marker, lngLat) => { // 设置marker在地图上的位置 marker: marker对象  lngLat：经过createPosition处理后的经纬度
+    marker.setPosition(lngLat)
+  },
+  positionPicker: (options) => { // 地图拖拽选址
     return new Promise(function (resolve, reject) {
       AMapUI.loadUI(['misc/PositionPicker'], function (PositionPicker) {
         const dragObj = new PositionPicker(options.dragOptions)
